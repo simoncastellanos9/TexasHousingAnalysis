@@ -1,70 +1,31 @@
-# Project_1_Housing_Market_Analysis
+
+# Texas Housing Market Analysis
+
+### Purpose
+
+Over the last couple of years, we have seen home prices rise in Texas. The main objective of this project is to analyze the current housing prices in Texas and determine what are some of the causes of the changes in prices.
+
+### Methodology
+
+##### Extraction:
+
+It was determined that the data needed to perform this analysis would be:
+
+- Housing prices - Zillow Research Data (https://www.zillow.com/research/data/). Zillow Home Value Index downloaded by zip code. This data was downloaded directly from the Zillow website into the Resources folder.
+- Consumer Price Index (CPI) of the principal materials used in construction of residential homes (lumber, cement, steel, stone, brick). To obtain this, we used an API from The Federal Reserve of St. Louis.
+
+##### Transformation:
+
+As we extracted the data for the materials, we cycled through each one and appended to a dataframe composed of the columns: Commodity, date and values. The commodity was represented by its code and the date was the first day of the month.
+
+The housing data involved several transformation steps. First, we created a dataframe with the information from the CSV file and filtered it only for data points in Texas. We then removed several columns. In the original file, each measurement date is a column and the rows identify the zip codes. In order to change this, pd.melt was used. The date recorded was also for the last day of the month. To change this to the first day of the month, we converted the date column to "DateTime" format and added a day.
+
+Both these dataframes were then converted to CSVs and downloaded into the "Resources" folder.
+
+##### Loading
 
 
-# Project Title: Housing Market Analysis Project Proposal
 
-NOTE: This is the initial project proposal. Final scope and results can be found in the PPTX document posted in the repository. 
 
-##### Team Members: 
 
-·     Ali Karimi
 
-·     Simon Castellanos
-
-·     Jucary Estrada
-
-·     Francis Escamilla
-
-##### Project Description: 
-
-​        Perform an analysis of the current housing market and try to determine what is triggering it and how different is it form the bubble from the early 2000’s. 
-
-##### Questions to Answer: 
-
-·     What is triggering rise in demand? 
-
-·     What triggered the demand in the early 2000’s? 
-
-·     What affecting it the low of supply of houses? 
-
-·     What is affecting the high cost of construction?
-
-·     Is there a true bubble? What is a bubble? – overinflation of realstate ** Paying more than what it is worth. 
-
-·     What is the scope? 
-
-##### Data sets to be used: 
-
-·     Zillow (data from early 2000’s and data from 2019 to current) –
-
-o  Supply of homes for sale (separate by house types)
-
-o  Average housing costs by zip codes/state/etc
-
-·     Historic data on interest rates vs increase on demand on houses
-
-·     Historic data on costs of construction
-
-·     Geographical data on population 
-
-·     Average income by geographical location
-
-·     Data on cost of construction materials for the past 2-3 years to show trend
-
-·     Data on un-employment in the construction area vs. job openings (is there a lot of demand of construction workers)
-
-·     Data on loan rate approvals rates: early 2000’s vs. current
-
-·     Investments trends – help answer the question of whether people are shifting from stock market to housing market as source of steady investment.
-
-·     Try to find if the houses are truly appraised at the value that they are selling at? 
-
-##### Breakdown of Tasks: 
-
-·     All team members research/think of potential data sets to eliminate options not feasible. 
-
-·     Francis – Create Repository
-
-·     Francis - PPT
-
-·     Team – create separation of task plan after determining which specific data to work with. 
