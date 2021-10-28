@@ -1,11 +1,11 @@
 
 # Texas Housing Market Analysis
 
-### Purpose
+## Purpose
 
 Over the last couple of years, we have seen home prices rise in Texas. The main objective of this project is to analyze the current housing prices in Texas and determine what are some of the causes of the changes in prices.
 
-### Methodology
+## Methodology
 
 ##### Extraction:
 
@@ -18,14 +18,42 @@ It was determined that the data needed to perform this analysis would be:
 
 As we extracted the data for the materials, we cycled through each one and appended to a dataframe composed of the columns: Commodity, date and values. The commodity was represented by its code and the date was the first day of the month.
 
-The housing data involved several transformation steps. First, we created a dataframe with the information from the CSV file and filtered it only for data points in Texas. We then removed several columns. In the original file, each measurement date is a column and the rows identify the zip codes. In order to change this, pd.melt was used. The date recorded was also for the last day of the month. To change this to the first day of the month, we converted the date column to "DateTime" format and added a day.
+<img src="C:\Users\simon_qba\TexasHousingAnalysis\Resources\commodity.PNG" alt="commodity" style="zoom:50%;" />
+
+The housing data involved several transformation steps. First, we created a dataframe with the information from the CSV file and filtered it only for data points in Texas. 
+
+![housing1](C:\Users\simon_qba\TexasHousingAnalysis\Resources\housing1.PNG)
+
+We then removed several columns. In the original file, each measurement date is a column and the rows identify the zip codes. In order to change this, pd.melt was used. The date recorded was also for the last day of the month. To change this to the first day of the month, we converted the date column to "DateTime" format and added a day.
+
+![housing2](C:\Users\simon_qba\TexasHousingAnalysis\Resources\housing2.PNG)
 
 Both these dataframes were then converted to CSVs and downloaded into the "Resources" folder.
 
 ##### Loading
 
+After the both dataframes were created and transformed to the appropriate format, they were loaded into Tableau. Once they were loaded, an inner join was performed on dates to allow for a comparison of housing price vs commodity price on a given day
 
+## Results
 
+##### Housing Prices
 
+![MedianPriceLine](C:\Users\simon_qba\TexasHousingAnalysis\Resources\MedianPriceLine.PNG)
 
+This chart shows how the average median price of homes in Texas has changed between 2000 and 2021. As can be seen, prices drop after the housing crisis of 2008 and start rising after 2012. In 2020, the rate at which these prices rise is significantly higher than in previous years as can be shown by the following chart.
 
+![DPrice](C:\Users\simon_qba\TexasHousingAnalysis\Resources\DPrice.PNG)
+
+##### Commodities
+
+After the evolution of the prices of the main four materials was graphed, it was seen that while the prices of  stone, brick and cement rise steadily, lumber and steel display a lot more volatility. The volatility of these can be seen specifically after 2020.
+
+![CommodityLegend](C:\Users\simon_qba\TexasHousingAnalysis\Resources\CommodityLegend.PNG)![CommodityLine](C:\Users\simon_qba\TexasHousingAnalysis\Resources\CommodityLine.PNG)
+
+##### Commodities vs Price
+
+After comparing the CPI for each commodity vs the Housing Price, it was seen that the prices of these commodities do affect the housing prices as a positive correlation can be seen for all four materials.
+
+ ![HousingVsCommodity](C:\Users\simon_qba\TexasHousingAnalysis\Resources\HousingVsCommodity.PNG)
+
+To view these in an interactive manner, please visit the Tableau dashboard.(https://public.tableau.com/app/profile/simon5203/viz/TexasHousingAnalysis/TexasRealEstateCommodities)
